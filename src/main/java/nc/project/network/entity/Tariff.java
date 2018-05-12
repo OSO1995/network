@@ -19,8 +19,8 @@ public class Tariff {
   @Column(name = "Speed")
   private int speed;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "tariff")
-  private Set<User> users;
+//  @OneToMany(fetch = FetchType.LAZY, mappedBy = "tariff")
+//  private Set<User> users;
 
   public Tariff() {
   }
@@ -29,7 +29,7 @@ public class Tariff {
     this.id = id;
     this.description = description;
     this.speed = speed;
-    this.users = users;
+//    this.users = users;
   }
 
   public Long getId() {
@@ -56,13 +56,13 @@ public class Tariff {
     this.speed = speed;
   }
 
-  public Set<User> getUsers() {
-    return users;
-  }
-
-  public void setUsers(Set<User> users) {
-    this.users = users;
-  }
+//  public Set<User> getUsers() {
+//    return users;
+//  }
+//
+//  public void setUsers(Set<User> users) {
+//    this.users = users;
+//  }
 
   @Override
   public String toString() {
@@ -70,7 +70,7 @@ public class Tariff {
         "id=" + id +
         ", description='" + description + '\'' +
         ", speed=" + speed +
-        ", users=" + users +
+//        ", users=" + users +
         '}';
   }
 }

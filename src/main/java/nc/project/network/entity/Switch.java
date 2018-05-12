@@ -15,9 +15,9 @@ public class Switch {
   @Column(name = "Status")
   private boolean enable;
 
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "ID_Area")
-//  private Area area;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "ID_Area")
+  private Area area;
 
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "aSwitch")
   private Set<Port> ports;
@@ -46,13 +46,13 @@ public class Switch {
     this.enable = enable;
   }
 
-//  public Area getArea() {
-//    return area;
-//  }
-//
-//  public void setArea(Area area) {
-//    this.area = area;
-//  }
+  public Area getArea() {
+    return area;
+  }
+
+  public void setArea(Area area) {
+    this.area = area;
+  }
 
   public Set<Port> getPorts() {
     return ports;

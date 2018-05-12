@@ -16,9 +16,9 @@ public class Port {
   @JoinColumn(name = "ID_Cable")
   private Cable cable;
 
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "ID_Switch")
-//  private Switch aSwitch;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "ID_Switch")
+  private Switch aSwitch;
 
   public Port() {
   }
@@ -43,13 +43,13 @@ public class Port {
     this.cable = cable;
   }
 
-//  public Switch getaSwitch() {
-//    return aSwitch;
-//  }
-//
-//  public void setaSwitch(Switch aSwitch) {
-//    this.aSwitch = aSwitch;
-//  }
+  public Switch getaSwitch() {
+    return aSwitch;
+  }
+
+  public void setaSwitch(Switch aSwitch) {
+    this.aSwitch = aSwitch;
+  }
 
   @Override
   public String toString() {
