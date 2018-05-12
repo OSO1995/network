@@ -25,6 +25,13 @@ public class Tariff {
   public Tariff() {
   }
 
+  public Tariff(Long id, String description, int speed, Set<User> users) {
+    this.id = id;
+    this.description = description;
+    this.speed = speed;
+    this.users = users;
+  }
+
   public Long getId() {
     return id;
   }

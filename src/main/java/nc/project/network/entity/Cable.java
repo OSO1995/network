@@ -20,6 +20,11 @@ public class Cable {
   public Cable() {
   }
 
+  public Cable(int speed, boolean enable) {
+    this.speed = speed;
+    this.enable = enable;
+  }
+
   public Long getId() {
     return id;
   }

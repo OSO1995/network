@@ -5,7 +5,6 @@ import nc.project.network.entity.User;
 import nc.project.network.repository.RoleRepository;
 import nc.project.network.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +22,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Bean
-    public BCryptPasswordEncoder getbCryptPasswordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
 
     @Override
     public void save(User user) {

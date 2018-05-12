@@ -1,7 +1,6 @@
 package nc.project.network.controller;
 
 import nc.project.network.entity.User;
-import nc.project.network.service.SecurityService;
 import nc.project.network.service.UserService;
 import nc.project.network.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +16,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private SecurityService securityService;
 
     @Autowired
     private UserValidator userValidator;
@@ -40,8 +36,6 @@ public class UserController {
         }
 
         userService.save(userForm);
-
-        securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
         return "redirect:/welcome";
     }

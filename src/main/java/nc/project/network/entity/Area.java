@@ -18,6 +18,10 @@ public class Area {
   public Area() {
   }
 
+  public Area(Set<Switch> switches){
+    this.switches = switches;
+  }
+
   public Long getId() {
     return id;
   }

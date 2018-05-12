@@ -22,6 +22,12 @@ public class Request {
   public Request() {
   }
 
+  public Request(Long id, User user, String request) {
+    this.id = id;
+    this.user = user;
+    this.request = request;
+  }
+
   public Long getId() {
     return id;
   }
