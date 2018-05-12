@@ -9,6 +9,7 @@ import nc.project.network.repository.CableRepository;
 import nc.project.network.repository.PortRepository;
 import nc.project.network.repository.SwitchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -29,8 +30,8 @@ public class HardwareService {
     @Autowired
     private CableRepository cableRepository;
 
-    public Area getAreaById(Long id) {
-        return areaRepository.findById(id).orElseThrow(NullPointerException::new);
+    public Area getAreaById(Long id) throws ChangeSetPersister.NotFoundException {
+        return areaRepository.findById(id).orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 
     public void createArea() {

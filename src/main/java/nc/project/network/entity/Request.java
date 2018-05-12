@@ -22,8 +22,7 @@ public class Request {
   public Request() {
   }
 
-  public Request(Long id, User user, String request) {
-    this.id = id;
+  public Request(User user, String request) {
     this.user = user;
     this.request = request;
   }
