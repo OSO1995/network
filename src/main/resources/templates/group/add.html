@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Group</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div>
+        <h2 class="header-2">Add New Group</h2>
+    </div>
+    <form th:action="${link}" th:object="${group}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <input class="input-text" placeholder="Enter Faculty Name" type="text" th:field="*{faculty}"/>
+        <input class="input-text" placeholder="Enter Group Number" type="text" th:field="*{number}"/>
+        <button class="button" type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

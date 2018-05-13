@@ -1,0 +1,95 @@
+html {
+    position: relative;
+}
+
+body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+.header {
+    height: 80px;
+    color: white;
+    background-color: green;
+    margin: 0;
+}
+
+.header-text {
+    padding-left: 10px;
+    margin: 0px;
+}
+
+.header-2{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.list {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.inline-list-element {
+    display: inline;
+    padding: 3px;
+}
+
+.inline-list-element a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.first-inline-list-element{
+    display: inline;
+    padding-left: 0px;
+}
+
+.container{
+    padding: 10px;
+}
+
+.button{
+    height: 30px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+.table{
+    text-align: center;
+    border-radius: 5px;
+}
+.table-header{
+    background-color: green;
+    color: white;
+    height: 30px;
+}
+
+.table td, th{
+    width: 300px;
+}
+
+.table tr{
+    height: 30px;
+}
+
+.input-text{
+    width: 600px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 5px;
+}
+
+.small-button{
+    width: 100px;
+}
+
+.button-list{
+    padding: 0px;
+}

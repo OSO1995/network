@@ -10,8 +10,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collections;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -67,5 +66,15 @@ public class UserServiceImpl implements UserService {
     private boolean isSimple(User currentUser, int necessarySpeed) {
         Cable cable = currentUser.getPersonalInfo().getCable();
         return cable.getSpeed() > necessarySpeed;
+    }
+
+    public User init(){
+        Role role = new Role();
+        role.setName("ROLE_ADMIN");
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("admin");
+        user.setRoles(Collections.singleton(role));
+        return userRepository.save(user);
     }
 }

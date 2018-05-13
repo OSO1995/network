@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page"
+      lang="en">
+<body>
+<div th:fragment="content">
+    <h2 class="header-2">Students</h2>
+
+    <div>
+        <form th:action="@{/student/add}">
+            <button class="button">Add New Student</button>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead class="table-header">
+        <tr>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td><a th:href="@{/student/{id}/(id=${student.id})}" th:text="${student.name}"/></td>
+            <td><a th:href="@{/group/{id}/(id=${student.groupId})}" th:text="${student.groupId}"/></td>
+            <td th:text="${student.date}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

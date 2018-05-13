@@ -3,7 +3,9 @@ package nc.project.network.service;
 import nc.project.network.entity.Tariff;
 import nc.project.network.entity.User;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface UserService {
 
   void delete(Long id);
@@ -17,5 +19,7 @@ public interface UserService {
   void addRequest(String request, Long userID);
 
   User findByUsername(String username);
+
+  User init();
 
 }

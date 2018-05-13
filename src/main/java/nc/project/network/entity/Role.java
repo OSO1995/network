@@ -2,7 +2,6 @@ package nc.project.network.entity;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
