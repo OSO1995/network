@@ -1,0 +1,41 @@
+spring:
+  application.name: mvc-example
+  profiles.active: ${MVC_ACTIVE_PROFILE:production}
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    basename: messages
+---
+spring:
+  profiles: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  file: logs/mvc_dev.log
+  level:
+    org.springframework.web: DEBUG
+    ru.javazen.telegram.bot: DEBUG
+    org.hibernate: DEBUG
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show_sql: true
+      format_sql: true
+      use_sql_comments: falce
+  datasource:
+    url: ${MVC_DB_CONNECTION_URL:jdbc:postgresql://localhost:5432/network}
+    username: ${MVC_DB_USER:postgres}
+    password: ${MVC_DB_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+logging:
+  file: logs/mvc_prod.log
+  level:
+    org.springframework.web: WARN
+    org.hibernate: INFO
