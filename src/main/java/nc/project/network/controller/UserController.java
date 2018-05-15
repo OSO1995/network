@@ -20,6 +20,9 @@ public class UserController {
     private UserService userService;
 
     @Autowired
+    private TariffRepository tariffRepository;
+
+    @Autowired
     private UserValidator userValidator;
 
     public void init(){

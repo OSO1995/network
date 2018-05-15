@@ -68,13 +68,10 @@ public class UserServiceImpl implements UserService {
         return cable.getSpeed() > necessarySpeed;
     }
 
-    public User init(){
-        Role role = new Role();
-        role.setName("ROLE_ADMIN");
-        User user = new User();
-        user.setUsername("admin");
-        user.setPassword("admin");
-        user.setRoles(Collections.singleton(role));
-        return userRepository.save(user);
+    public void init(){
+        Tariff tariff = new Tariff();
+        tariff.setDescription("fff");
+        tariff.setSpeed(100);
+        tariffRepository.save(tariff);
     }
 }

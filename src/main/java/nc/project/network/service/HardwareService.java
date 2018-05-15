@@ -1,9 +1,6 @@
 package nc.project.network.service;
 
-import nc.project.network.entity.Area;
-import nc.project.network.entity.Cable;
-import nc.project.network.entity.Port;
-import nc.project.network.entity.Switch;
+import nc.project.network.entity.*;
 import nc.project.network.repository.AreaRepository;
 import nc.project.network.repository.CableRepository;
 import nc.project.network.repository.PortRepository;

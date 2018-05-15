@@ -20,6 +20,6 @@ public interface UserService {
 
   User findByUsername(String username);
 
-  User init();
+  void init();
 
 }
