@@ -22,4 +22,7 @@ public interface UserService {
 
   void init();
 
+  User findByID(Long id);
+
+  User createAdmin();
 }

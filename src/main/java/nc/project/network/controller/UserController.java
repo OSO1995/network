@@ -61,11 +61,15 @@ public class UserController {
 
         return "login";
     }
-//
-//    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-//    public String welcome(Model model) {
-//        return "welcome";
-//    }
+
+    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+    public String welcome(Model model) {
+        if(userService.findByID(1L) == null) {
+            User user = userService.createAdmin();
+            userService.save(user);
+        }
+        return "welcome";
+    }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {

@@ -74,4 +74,21 @@ public class UserServiceImpl implements UserService {
         tariff.setSpeed(100);
         tariffRepository.save(tariff);
     }
+
+    @Override
+    public User findByID(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public User createAdmin() {
+        Role role = new Role();
+        role.setName("ROLE_ADMIN");
+        roleRepository.save(role);
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("admin");
+        user.setRoles(Collections.singleton(role));
+        return user;
+    }
 }

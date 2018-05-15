@@ -38,4 +38,4 @@ logging:
   file: logs/mvc_prod.log
   level:
     org.springframework.web: WARN
-    org.hibernate: INFO
+    org.hibernate: WARN
