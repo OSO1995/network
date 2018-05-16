@@ -1,12 +1,14 @@
 package nc.project.network.entity;
 
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "Roles")
-public class Role {
+public class Role implements GrantedAuthority {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +18,7 @@ public class Role {
   @Column(name = "Name")
   private String name;
 
-  @ManyToMany(mappedBy = "roles")
+  @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles",cascade = CascadeType.ALL)
   private Set<User> users;
 
   public Role() {
@@ -53,5 +55,10 @@ public class Role {
         ", name='" + name + '\'' +
         ", users=" + users +
         '}';
+  }
+
+  @Override
+  public String getAuthority() {
+    return name;
   }
 }

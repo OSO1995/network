@@ -54,25 +54,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        return userRepository.findByUsername(username).orElse(null);
     }
 
     @Override
     public int calculateCost(Long userId, int necessarySpeed) throws ChangeSetPersister.NotFoundException {
-        User currentUser = userRepository.findById(userId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        return isSimple(currentUser,necessarySpeed) ? 100 : 200;
+        UserBase currentUserBase = userRepository.findById(userId).orElseThrow(ChangeSetPersister.NotFoundException::new);
+        return isSimple(currentUserBase,necessarySpeed) ? 100 : 200;
     }
 
-    private boolean isSimple(User currentUser, int necessarySpeed) {
+    private boolean isSimple(UserBase currentUser, int necessarySpeed) {
         Cable cable = currentUser.getPersonalInfo().getCable();
         return cable.getSpeed() > necessarySpeed;
-    }
-
-    public void init(){
-        Tariff tariff = new Tariff();
-        tariff.setDescription("fff");
-        tariff.setSpeed(100);
-        tariffRepository.save(tariff);
     }
 
     @Override
@@ -80,15 +73,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public User createAdmin() {
-        Role role = new Role();
-        role.setName("ROLE_ADMIN");
-        roleRepository.save(role);
-        User user = new User();
-        user.setUsername("admin");
-        user.setPassword("admin");
-        user.setRoles(Collections.singleton(role));
-        return user;
-    }
 }

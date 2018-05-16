@@ -12,11 +12,11 @@ public class Port {
   @Column(name = "ID_Port")
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(name = "ID_Cable")
   private Cable cable;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(name = "ID_Switch")
   private Switch aSwitch;
 

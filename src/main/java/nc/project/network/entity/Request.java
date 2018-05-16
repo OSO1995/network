@@ -12,9 +12,9 @@ public class Request {
   @Column(name = "ID_Request")
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(name = "ID_User")
-  private User user;
+  private UserBase user;
 
   @Column(name = "Request")
   private String request;
@@ -35,7 +35,7 @@ public class Request {
     this.id = id;
   }
 
-  public User getUser() {
+  public UserBase getUser() {
     return user;
   }
 

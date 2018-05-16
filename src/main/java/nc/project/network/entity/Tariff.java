@@ -25,13 +25,6 @@ public class Tariff {
   public Tariff() {
   }
 
-  public Tariff(Long id, String description, int speed, Set<User> users) {
-    this.id = id;
-    this.description = description;
-    this.speed = speed;
-//    this.users = users;
-  }
-
   public Long getId() {
     return id;
   }
@@ -56,11 +49,11 @@ public class Tariff {
     this.speed = speed;
   }
 
-//  public Set<User> getUsers() {
+//  public Set<UserBase> getUsers() {
 //    return users;
 //  }
 //
-//  public void setUsers(Set<User> users) {
+//  public void setUsers(Set<UserBase> users) {
 //    this.users = users;
 //  }
 

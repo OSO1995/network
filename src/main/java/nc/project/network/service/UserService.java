@@ -20,9 +20,6 @@ public interface UserService {
 
   User findByUsername(String username);
 
-  void init();
-
   User findByID(Long id);
 
-  User createAdmin();
 }
