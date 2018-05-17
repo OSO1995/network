@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new user</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div>
+        <h2 class="header-2">Add New Student</h2>
+    </div>
+
+    <form th:action="${link}" th:object="${user}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+
+        <input class="input-text" type="text" placeholder="Enter name" th:field="*{username}">
+
+        <input class="input-text" type="text" placeholder="Enter password" th:field="*{password}">
+
+        <input class="input-text" type="text" placeholder="Confirm password" th:field="*{confirmPassword}">
+
+        <input class="input-text" type="text" placeholder="Enter first name" th:field="*{personalInfo.firstName}">
+
+        <input class="input-text" type="text" placeholder="Enter second name" th:field="*{personalInfo.secondName}">
+
+        <select class="input-text" th:field="*{personalInfo.tariff}">
+            <option th:each="tariff : ${tariffs}"
+                    th:value="${tariff.id}"
+                    th:text="${tariff.speed} + ' ' + ${tariff.id}"></option>
+        </select>
+
+        <select class="input-text" th:field="*{personalInfo.cable}">
+            <option th:each="cable : ${cables}"
+                    th:value="${cable.id}"
+                    th:text="${cable.id}"></option>
+        </select>
+
+        <select class="input-text" th:field="*{roles}">
+            <option th:each="role : ${roles}"
+                    th:value="${role.id}"
+                    th:text="${role.name}"></option>
+        </select>
+
+        <button class="button" type="submit">Save</button>
+    </form>
+</div>
+
+</body>
+</html>

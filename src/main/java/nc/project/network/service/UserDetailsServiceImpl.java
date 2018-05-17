@@ -29,7 +29,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             User user = new User();
             Role role = new Role();
             role.setName("ROLE_ADMIN");
-            roleRepository.save(role);
             user.setUsername("admin");
             user.setPassword(new BCryptPasswordEncoder().encode("admin"));
             user.setRoles(Collections.singleton(role));

@@ -1,6 +1,7 @@
 package nc.project.network.entity;
 
 
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -85,7 +86,7 @@ public class UserBase {
 
     @Override
     public String toString() {
-        return "UserBase{" +
+        return "User{" +
                 "username='" + username + '\'' +
                 roles.toString() +
                 '}';

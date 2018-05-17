@@ -10,8 +10,6 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -59,11 +57,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int calculateCost(Long userId, int necessarySpeed) throws ChangeSetPersister.NotFoundException {
-        UserBase currentUserBase = userRepository.findById(userId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        return isSimple(currentUserBase,necessarySpeed) ? 100 : 200;
+        User currentUser = userRepository.findById(userId).orElseThrow(ChangeSetPersister.NotFoundException::new);
+        return isSimple(currentUser,necessarySpeed) ? 100 : 200;
     }
 
-    private boolean isSimple(UserBase currentUser, int necessarySpeed) {
+    private boolean isSimple(User currentUser, int necessarySpeed) {
         Cable cable = currentUser.getPersonalInfo().getCable();
         return cable.getSpeed() > necessarySpeed;
     }
