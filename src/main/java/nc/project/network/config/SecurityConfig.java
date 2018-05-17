@@ -33,10 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers().permitAll()
+                .antMatchers("/").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll()
+                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/welcome")
                 .and()
                 .logout().permitAll().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll();
     }
