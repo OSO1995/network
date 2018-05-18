@@ -1,10 +1,14 @@
 package nc.project.network.controller;
 
+import nc.project.network.entity.Role;
+import nc.project.network.entity.Tariff;
 import nc.project.network.entity.User;
 import nc.project.network.repository.CableRepository;
 import nc.project.network.repository.RoleRepository;
 import nc.project.network.repository.TariffRepository;
 import nc.project.network.repository.UserRepository;
+import nc.project.network.validator.RoleValidator;
+import nc.project.network.validator.TariffValidator;
 import nc.project.network.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,6 +39,12 @@ public class AdminController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private RoleValidator roleValidator;
+
+    @Autowired
+    private TariffValidator tariffValidator;
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addUser(ModelMap model) {
         model.addAttribute("link", "/user/add");
@@ -64,5 +74,45 @@ public class AdminController {
         return "redirect:/welcome";
     }
 
+
+    @RequestMapping(value = "/role/add", method = RequestMethod.GET)
+    public String addRole(ModelMap model) {
+        model.addAttribute("link", "/user/role/add");
+        model.addAttribute("role",new Role());
+        return "/user/role/add";
+    }
+
+    @RequestMapping(value = "/role/add", method = RequestMethod.POST)
+    public String addRole(@ModelAttribute("userForm") Role roleForm, BindingResult bindingResult, Model model) {
+        roleValidator.validate(roleForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "/user/role/add";
+        }
+
+        roleRepository.save(roleForm);
+
+        return "redirect:/welcome";
+    }
+
+    @RequestMapping(value = "/tariff/add", method = RequestMethod.GET)
+    public String addTariff(ModelMap model) {
+        model.addAttribute("link", "/user/tariff/add");
+        model.addAttribute("tariff",new Tariff());
+        return "/user/tariff/add";
+    }
+
+    @RequestMapping(value = "/tariff/add", method = RequestMethod.POST)
+    public String addTariff(@ModelAttribute("tariffForm") Tariff tariffForm, BindingResult bindingResult, Model model) {
+        tariffValidator.validate(tariffForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "/user/tariff/add";
+        }
+
+        tariffRepository.save(tariffForm);
+
+        return "redirect:/welcome";
+    }
 
 }
