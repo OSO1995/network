@@ -23,6 +23,10 @@ public class PersonalInfo {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<Request> requests;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_Area")
+    private Area area;
+
     public String getFirstName() {
         return firstName;
     }
@@ -61,5 +65,13 @@ public class PersonalInfo {
 
     public void setRequests(Set<Request> requests) {
         this.requests = requests;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 }

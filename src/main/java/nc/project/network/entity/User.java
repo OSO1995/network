@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import java.util.Collection;
 
 @Entity
-public class User extends UserBase implements UserDetails {
+public class User extends UserBase implements UserDetails, Device {
 
     private boolean accountNonExpired;
     private boolean accountNonLocked;

@@ -14,15 +14,11 @@ public class Cable {
   @Column(name = "Speed")
   private int speed;
 
-  @Column(name = "Status")
-  private boolean enable;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "ID_Area")
+  private Area area;
 
   public Cable() {
-  }
-
-  public Cable(int speed, boolean enable) {
-    this.speed = speed;
-    this.enable = enable;
   }
 
   public Long getId() {
@@ -41,20 +37,18 @@ public class Cable {
     this.speed = speed;
   }
 
-  public boolean isEnable() {
-    return enable;
-  }
-
-  public void setEnable(boolean enable) {
-    this.enable = enable;
-  }
-
   @Override
   public String toString() {
     return "Cable{" +
         "id=" + id +
-        ", speed=" + speed +
-        ", enable=" + enable +
         '}';
+  }
+
+  public Area getArea() {
+    return area;
+  }
+
+  public void setArea(Area area) {
+    this.area = area;
   }
 }

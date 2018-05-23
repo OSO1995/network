@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Switches")
-public class Switch {
+public class Switch implements Device {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -66,9 +66,6 @@ public class Switch {
   public String toString() {
     return "Switch{" +
         "id=" + id +
-        ", enable=" + enable +
-//        ", area=" + area +
-        ", ports=" + ports +
         '}';
   }
 }

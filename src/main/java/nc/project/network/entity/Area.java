@@ -15,6 +15,12 @@ public class Area {
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "area")
   private Set<Switch> switches;
 
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "personalInfo.area")
+  private Set<User> users;
+
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "area")
+  private Set<Cable> cables;
+
   public Area() {
   }
 
@@ -36,6 +42,22 @@ public class Area {
 
   public void setSwitches(Set<Switch> switches) {
     this.switches = switches;
+  }
+
+  public Set<User> getUsers() {
+    return users;
+  }
+
+  public void setUsers(Set<User> users) {
+    this.users = users;
+  }
+
+  public Set<Cable> getCables() {
+    return cables;
+  }
+
+  public void setCables(Set<Cable> cables) {
+    this.cables = cables;
   }
 
   @Override

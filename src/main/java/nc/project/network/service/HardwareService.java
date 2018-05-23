@@ -54,11 +54,11 @@ public class HardwareService {
     }
 
 
-    public Set<Cable> createCable(int count) {
-        Set<Cable> cables = new HashSet<>();
-        for (int j = 1; j < count; j++) {
-            cables.add(new Cable(300, false));
-        }
-        return cables;
-    }
+//    public Set<Cable> createCable(int count) {
+//        Set<Cable> cables = new HashSet<>();
+//        for (int j = 1; j < count; j++) {
+//            cables.add(new Cable(300, false));
+//        }
+//        return cables;
+//    }
 }
