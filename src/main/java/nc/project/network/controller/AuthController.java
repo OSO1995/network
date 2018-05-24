@@ -1,6 +1,8 @@
 package nc.project.network.controller;
 
 import nc.project.network.service.HardwareService;
+import nc.project.network.service.algorithms.DepthFirstSearch;
+import nc.project.network.service.algorithms.algorithmicEntities.Graph;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ public class AuthController {
     @Autowired
     private HardwareService hardwareService;
 
+    @Autowired
+    private DepthFirstSearch depthFirstSearch;
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login(Model model) {
@@ -31,7 +35,8 @@ public class AuthController {
 
     @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
     public String test(Model model) {
-        hardwareService.test();
+        Graph G = hardwareService.getGraph();
+        depthFirstSearch.test(G,"Switch{id=10}");
         return "test";
     }
 

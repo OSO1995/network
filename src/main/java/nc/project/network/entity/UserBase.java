@@ -89,8 +89,7 @@ public class UserBase {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
-                roles.toString() +
+                "id=" + id +
                 '}';
     }
 }

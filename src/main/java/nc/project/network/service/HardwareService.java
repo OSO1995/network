@@ -26,7 +26,7 @@ public class HardwareService {
 
     @PostConstruct
     private void init() {
-        if (!areaRepository.findById(5L).isPresent()) {
+        if (!areaRepository.findById(10L).isPresent()) {
             Cable[] cables = new Cable[6];
             for (int i = 0; i < cables.length; i++) {
                cables[i] = new Cable(100);
@@ -119,10 +119,10 @@ public class HardwareService {
     }
 
 
-    public void test() {
+    public Graph getGraph() {
         List<Area> areas = new ArrayList<>();
         areaRepository.findAll().forEach(area -> areas.add(area));
-        Graph G = graphService.getGraph(areas.get(0));
+       return graphService.getGraph(areas.get(0));
     }
 
     public Area getAreaById(Long id) throws ChangeSetPersister.NotFoundException {

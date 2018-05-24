@@ -114,6 +114,8 @@ public class GraphService {
 
             private boolean visited;
 
+            private boolean black;
+
             @Override
             public String getName() {
                 return this.device.toString();
@@ -131,6 +133,16 @@ public class GraphService {
 
             public Device getDevice() {
                 return device;
+            }
+
+            @Override
+            public boolean isBlack() {
+                return black;
+            }
+
+            @Override
+            public void setBlack(boolean black) {
+                this.black = black;
             }
         };
     }
