@@ -12,13 +12,14 @@ public class Port {
   @Column(name = "ID_Port")
   private Long id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Cable")
   private Cable cable;
 
-  @ManyToOne
-  @JoinColumn(name = "ID_Switch")
-  private Switch aSwitch;
+  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Switch", insertable=false, updatable=false)
+  private Switch switcch;
+
 
   public Port() {
   }
@@ -43,12 +44,12 @@ public class Port {
     this.cable = cable;
   }
 
-  public Switch getaSwitch() {
-    return aSwitch;
+  public Switch getSwitcch() {
+    return switcch;
   }
 
-  public void setaSwitch(Switch aSwitch) {
-    this.aSwitch = aSwitch;
+  public void setSwitcch(Switch switcch) {
+    this.switcch = switcch;
   }
 
   @Override

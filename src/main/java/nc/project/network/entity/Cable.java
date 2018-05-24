@@ -14,11 +14,15 @@ public class Cable {
   @Column(name = "Speed")
   private int speed;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "ID_Area")
+  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Area",insertable = false,updatable = false)
   private Area area;
 
   public Cable() {
+  }
+
+  public Cable(int speed) {
+    this.speed = speed;
   }
 
   public Long getId() {

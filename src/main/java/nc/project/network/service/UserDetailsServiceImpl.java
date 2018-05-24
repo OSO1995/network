@@ -26,6 +26,19 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @PostConstruct
     public void init() {
         if (!userRepository.findByUsername("admin").isPresent()) {
+
+            User user1 = new User();
+            Role role1 = new Role();
+            role1.setName("ROLE_USER");
+            user1.setUsername("user");
+            user1.setPassword(new BCryptPasswordEncoder().encode("user"));
+            user1.setRoles(Collections.singleton(role1));
+            user1.setAccountNonExpired(true);
+            user1.setAccountNonLocked(true);
+            user1.setCredentialsNonExpired(true);
+            user1.setEnabled(true);
+            userRepository.save(user1);
+
             User user = new User();
             Role role = new Role();
             role.setName("ROLE_ADMIN");
@@ -37,6 +50,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             user.setCredentialsNonExpired(true);
             user.setEnabled(true);
             userRepository.save(user);
+
+
         }
     }
 

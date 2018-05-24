@@ -12,13 +12,16 @@ public class Area {
   @Column(name = "ID_Area")
   private Long id;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "area")
+  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Area")
   private Set<Switch> switches;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "personalInfo.area")
+  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Area")
   private Set<User> users;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "area")
+  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Area")
   private Set<Cable> cables;
 
   public Area() {

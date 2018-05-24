@@ -1,5 +1,7 @@
 package nc.project.network.service.algorithms.algorithmicEntities;
 
+import nc.project.network.entity.Cable;
+
 public interface IEdge {
     String getName();
 
@@ -10,4 +12,6 @@ public interface IEdge {
     IVertex getSecondVertex();
 
     void setSecondVertex(IVertex vertex);
+
+    Cable getCable();
 }

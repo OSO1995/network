@@ -12,7 +12,7 @@ public class Request {
   @Column(name = "ID_Request")
   private Long id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "ID_User")
   private UserBase user;
 

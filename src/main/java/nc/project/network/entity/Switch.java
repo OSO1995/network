@@ -15,11 +15,12 @@ public class Switch implements Device {
   @Column(name = "Status")
   private boolean enable;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area")
   private Area area;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "aSwitch")
+  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @JoinColumn(name = "ID_Switch")
   private Set<Port> ports;
 
   public Switch() {
