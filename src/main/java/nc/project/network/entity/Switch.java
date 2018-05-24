@@ -8,7 +8,9 @@ import java.util.Set;
 public class Switch implements Device {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "switch_id_sequence_gen",
+          sequenceName="switch_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "switch_id_sequence_gen")
   @Column(name = "ID_Switch")
   private Long id;
 

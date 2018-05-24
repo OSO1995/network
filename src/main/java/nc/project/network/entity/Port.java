@@ -8,7 +8,9 @@ import javax.persistence.*;
 public class Port {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "port_id_sequence_gen",
+          sequenceName="port_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "port_id_sequence_gen")
   @Column(name = "ID_Port")
   private Long id;
 

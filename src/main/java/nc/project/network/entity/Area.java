@@ -8,7 +8,9 @@ import java.util.Set;
 public class Area {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "area_id_sequence_gen",
+          sequenceName="area_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "area_id_sequence_gen")
   @Column(name = "ID_Area")
   private Long id;
 

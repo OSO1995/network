@@ -10,7 +10,9 @@ import java.util.Set;
 public class UserBase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "user_id_sequence_gen",
+            sequenceName="user_id_sequence", initialValue = 10)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_sequence_gen")
     @Column(name = "ID_User")
     private Long id;
 

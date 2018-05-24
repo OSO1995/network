@@ -9,7 +9,9 @@ import java.util.Set;
 public class Tariff {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "tariff_id_sequence_gen",
+          sequenceName="tariff_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tariff_id_sequence_gen")
   @Column(name = "ID_Tariff")
   private Long id;
 

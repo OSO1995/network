@@ -11,7 +11,9 @@ import java.util.Set;
 public class Role implements GrantedAuthority {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "role_id_sequence_gen",
+          sequenceName="role_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_id_sequence_gen")
   @Column(name = "ID_Role")
   private Long id;
 

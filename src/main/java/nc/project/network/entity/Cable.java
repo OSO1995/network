@@ -7,7 +7,9 @@ import javax.persistence.*;
 public class Cable {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "cable_id_sequence_gen",
+          sequenceName="cable_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cable_id_sequence_gen")
   @Column(name = "ID_Cable")
   private Long id;
 

@@ -8,7 +8,9 @@ import javax.persistence.*;
 public class Request {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @SequenceGenerator(name = "request_id_sequence_gen",
+          sequenceName="request_id_sequence", initialValue = 10)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "request_id_sequence_gen")
   @Column(name = "ID_Request")
   private Long id;
 
