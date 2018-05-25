@@ -72,7 +72,7 @@
 
 java.lang.NullPointerException: null
 	at nc.project.network.service.algorithms.DepthFirstSearch.startDFS(DepthFirstSearch.java:31) ~[classes/:na]
-	at nc.project.network.service.algorithms.DepthFirstSearch.test(DepthFirstSearch.java:27) ~[classes/:na]
+	at startDepthFirstSearch(DepthFirstSearch.java:27) ~[classes/:na]
 	at nc.project.network.controller.AuthController.test(AuthController.java:39) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
@@ -443,3 +443,246 @@ Verify the connector's configuration, identify and stop any process that's liste
 2018-05-25 01:16:20.003  WARN 6780 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [131] milliseconds.
 2018-05-25 01:18:51.862  WARN 6780 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s169ms145µs760ns).
 2018-05-25 01:24:12.962  WARN 6780 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m35s42ms269µs657ns).
+2018-05-25 01:30:14.719  WARN 6780 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m1s755ms409µs188ns).
+2018-05-25 10:15:49.532  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 9108 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:15:49.532  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:15:49.657  INFO 9108 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3d85204f: startup date [Fri May 25 10:15:49 SAMT 2018]; root of context hierarchy
+2018-05-25 10:15:51.735  INFO 9108 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b465082b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:15:52.204  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:15:52.235  INFO 9108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:15:52.235  INFO 9108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:15:52.235  INFO 9108 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft HPC Pack 2008 SDK\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\matlab\runtime\win64;F:\matlab\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\work\AppData\Local\Microsoft\WindowsApps;C:\Users\work\AppData\Local\GitHubDesktop\bin;.]
+2018-05-25 10:15:52.345  INFO 9108 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:15:52.548  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:15:52.688  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-25 10:15:52.782  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-25 10:15:52.876  INFO 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:15:54.063  INFO 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:15:55.142  INFO 9108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66dbdd91, org.springframework.security.web.context.SecurityContextPersistenceFilter@592b7f46, org.springframework.security.web.header.HeaderWriterFilter@2b3556d7, org.springframework.security.web.csrf.CsrfFilter@2aca3ae3, org.springframework.security.web.authentication.logout.LogoutFilter@21c66750, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4dbc427d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d57c378, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74edd321, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b56f686, org.springframework.security.web.session.SessionManagementFilter@360d9ab, org.springframework.security.web.access.ExceptionTranslationFilter@4dcd1c5c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20fbee30]
+2018-05-25 10:15:55.438  WARN 9108 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:15:55.923  INFO 9108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-05-25 10:15:55.970  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:15:55.970  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:15:55.970  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:15:56.017  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-25 10:15:56.017  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : Started NetworkApplication in 7.094 seconds (JVM running for 8.032)
+2018-05-25 10:16:06.745  INFO 9108 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-25 10:16:07.043  WARN 9108 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [186] milliseconds.
+2018-05-25 10:37:33.062  INFO 9108 --- [Thread-6] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3d85204f: startup date [Fri May 25 10:15:49 SAMT 2018]; root of context hierarchy
+2018-05-25 10:37:33.065  INFO 9108 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-25 10:37:33.068  INFO 9108 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-25 10:37:33.077  INFO 9108 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:33.086  INFO 9108 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-05-25 10:37:33.107  INFO 9108 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-05-25 10:37:33.543  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 9108 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:37:33.546  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:37:33.550  INFO 9108 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7baba017: startup date [Fri May 25 10:37:33 SAMT 2018]; root of context hierarchy
+2018-05-25 10:37:34.743  INFO 9108 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b465082b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:37:34.972  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:37:34.973  INFO 9108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:37:34.973  INFO 9108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:37:35.314  INFO 9108 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:37:35.468  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:37:35.469  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:37:35.469  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:37:35.469  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:37:35.470  INFO 9108 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:37:35.470  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:37:35.470  INFO 9108 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:37:35.697  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2018-05-25 10:37:35.749  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2018-05-25 10:37:35.760  INFO 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:36.078  INFO 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:36.574  INFO 9108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@659b0944, org.springframework.security.web.context.SecurityContextPersistenceFilter@581e13c3, org.springframework.security.web.header.HeaderWriterFilter@4d042775, org.springframework.security.web.csrf.CsrfFilter@2d73b870, org.springframework.security.web.authentication.logout.LogoutFilter@789bced7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cd989c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8fe9fe9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64ad3e0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@594d35a1, org.springframework.security.web.session.SessionManagementFilter@681e8688, org.springframework.security.web.access.ExceptionTranslationFilter@320c479e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@718a2cdd]
+2018-05-25 10:37:36.926  WARN 9108 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:37:37.499  INFO 9108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-05-25 10:37:37.511  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:37:37.654  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:37:37.658  INFO 9108 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:37:37.740  INFO 12984 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 12984 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:37:37.741  INFO 12984 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:37:37.879  INFO 12984 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7fbd63d2: startup date [Fri May 25 10:37:37 SAMT 2018]; root of context hierarchy
+2018-05-25 10:37:38.753  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-25 10:37:39.009  INFO 9108 --- [restartedMain] nc.project.network.NetworkApplication    : Started NetworkApplication in 5.536 seconds (JVM running for 1311.017)
+2018-05-25 10:37:39.020  INFO 9108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2018-05-25 10:37:40.229  INFO 12984 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$abf1a4ad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:37:40.686  INFO 12984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:37:40.712  INFO 12984 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:37:40.713  INFO 12984 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:37:40.722  INFO 12984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft HPC Pack 2008 SDK\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\matlab\runtime\win64;F:\matlab\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\work\AppData\Local\Microsoft\WindowsApps;C:\Users\work\AppData\Local\GitHubDesktop\bin;.]
+2018-05-25 10:37:40.845  INFO 12984 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:37:41.013  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:37:41.013  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:37:41.013  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:37:41.014  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:37:41.015  INFO 12984 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:37:41.015  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:37:41.016  INFO 12984 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:37:41.156  INFO 12984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-25 10:37:41.263  INFO 12984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-25 10:37:41.317  INFO 12984 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:42.408  INFO 12984 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:43.429  INFO 12984 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@677e8e78, org.springframework.security.web.context.SecurityContextPersistenceFilter@49a61781, org.springframework.security.web.header.HeaderWriterFilter@15ab1dba, org.springframework.security.web.csrf.CsrfFilter@41204959, org.springframework.security.web.authentication.logout.LogoutFilter@4bbd7299, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7956240, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bf78159, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22227321, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c4e9925, org.springframework.security.web.session.SessionManagementFilter@60965f66, org.springframework.security.web.access.ExceptionTranslationFilter@59093715, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3de799eb]
+2018-05-25 10:37:43.777  WARN 12984 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:37:44.242  WARN 12984 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2018-05-25 10:37:44.268  INFO 12984 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:37:44.270  INFO 12984 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:37:44.276  INFO 12984 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:37:44.298 ERROR 12984 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.5.RELEASE.jar:5.0.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) [spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at nc.project.network.NetworkApplication.main(NetworkApplication.java:13) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:433) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:425) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.29.jar:8.5.29]
+	... 19 common frames omitted
+
+2018-05-25 10:37:44.301  INFO 12984 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-25 10:37:44.314  INFO 12984 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-05-25 10:37:44.315 ERROR 12984 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-05-25 10:37:44.317  INFO 12984 --- [restartedMain] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7fbd63d2: startup date [Fri May 25 10:37:37 SAMT 2018]; root of context hierarchy
+2018-05-25 10:37:44.319  INFO 12984 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-25 10:37:44.321  INFO 12984 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-25 10:37:44.323  INFO 12984 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:37:44.324  INFO 12984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-05-25 10:37:44.333  INFO 12984 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-05-25 10:37:59.495  INFO 12832 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 12832 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:37:59.496  INFO 12832 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:37:59.598  INFO 12832 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@624e4942: startup date [Fri May 25 10:37:59 SAMT 2018]; root of context hierarchy
+2018-05-25 10:38:01.741  INFO 12832 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$514f9ca5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:38:02.176  INFO 12832 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:38:02.199  INFO 12832 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:38:02.200  INFO 12832 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:38:02.208  INFO 12832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft HPC Pack 2008 SDK\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\matlab\runtime\win64;F:\matlab\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\work\AppData\Local\Microsoft\WindowsApps;C:\Users\work\AppData\Local\GitHubDesktop\bin;.]
+2018-05-25 10:38:02.302  INFO 12832 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:38:02.481  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:38:02.481  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:38:02.481  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:38:02.483  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:38:02.483  INFO 12832 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:38:02.484  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:38:02.485  INFO 12832 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:38:02.629  INFO 12832 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-25 10:38:02.727  INFO 12832 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-25 10:38:02.785  INFO 12832 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:38:03.899  INFO 12832 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:38:04.925  INFO 12832 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@99d02a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@605386dc, org.springframework.security.web.header.HeaderWriterFilter@71f093d7, org.springframework.security.web.csrf.CsrfFilter@425df013, org.springframework.security.web.authentication.logout.LogoutFilter@4ad62d42, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a256979, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7845c5cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71ca1ddc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51e00968, org.springframework.security.web.session.SessionManagementFilter@2aeeac75, org.springframework.security.web.access.ExceptionTranslationFilter@fb13c7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26e6d44f]
+2018-05-25 10:38:05.201  WARN 12832 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:38:05.638  INFO 12832 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-05-25 10:38:05.666  INFO 12832 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:38:05.669  INFO 12832 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:38:05.674  INFO 12832 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:38:05.721  INFO 12832 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-25 10:38:05.738  INFO 12832 --- [restartedMain] nc.project.network.NetworkApplication    : Started NetworkApplication in 6.876 seconds (JVM running for 7.545)
+2018-05-25 10:38:08.942  INFO 12832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-25 10:38:10.456  WARN 12832 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [108] milliseconds.
+2018-05-25 10:40:56.840  INFO 4724 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 4724 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:40:56.846  INFO 4724 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:40:56.915  INFO 4724 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@624c1d: startup date [Fri May 25 10:40:56 SAMT 2018]; root of context hierarchy
+2018-05-25 10:40:58.897  INFO 4724 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$857a555] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:40:59.340  INFO 4724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:40:59.362  INFO 4724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:40:59.363  INFO 4724 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:40:59.371  INFO 4724 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft HPC Pack 2008 SDK\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\matlab\runtime\win64;F:\matlab\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\work\AppData\Local\Microsoft\WindowsApps;C:\Users\work\AppData\Local\GitHubDesktop\bin;.]
+2018-05-25 10:40:59.531  INFO 4724 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:40:59.708  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:40:59.709  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:40:59.709  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:40:59.710  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:40:59.710  INFO 4724 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:40:59.710  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:40:59.711  INFO 4724 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:40:59.861  INFO 4724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-25 10:40:59.961  INFO 4724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-25 10:41:00.015  INFO 4724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:41:01.101  INFO 4724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:41:02.198  INFO 4724 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32a54c06, org.springframework.security.web.context.SecurityContextPersistenceFilter@360d9ab, org.springframework.security.web.header.HeaderWriterFilter@5e5f2d88, org.springframework.security.web.csrf.CsrfFilter@88c5908, org.springframework.security.web.authentication.logout.LogoutFilter@6b5b0245, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58a07441, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c8348fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e994e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39bf2b, org.springframework.security.web.session.SessionManagementFilter@29abcf23, org.springframework.security.web.access.ExceptionTranslationFilter@3b56d326, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@468e92be]
+2018-05-25 10:41:02.507  WARN 4724 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:41:03.006  INFO 4724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-05-25 10:41:03.032  INFO 4724 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:41:03.034  INFO 4724 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:41:03.039  INFO 4724 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:41:03.070  INFO 4724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-25 10:41:03.075  INFO 4724 --- [restartedMain] nc.project.network.NetworkApplication    : Started NetworkApplication in 6.767 seconds (JVM running for 7.436)
+2018-05-25 10:41:06.738  INFO 4724 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-25 10:41:08.452  WARN 4724 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [105] milliseconds.
+2018-05-25 10:42:42.912  INFO 15572 --- [restartedMain] nc.project.network.NetworkApplication    : Starting NetworkApplication on DESKTOP-R8GRSS7 with PID 15572 (C:\Users\work\Documents\GitHub\network\target\classes started by work in C:\Users\work\Documents\GitHub\network)
+2018-05-25 10:42:42.913  INFO 15572 --- [restartedMain] nc.project.network.NetworkApplication    : The following profiles are active: production
+2018-05-25 10:42:43.004  INFO 15572 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@66e2cd3e: startup date [Fri May 25 10:42:43 SAMT 2018]; root of context hierarchy
+2018-05-25 10:42:44.771  INFO 15572 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2449bd4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-25 10:42:45.233  INFO 15572 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-25 10:42:45.258  INFO 15572 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-25 10:42:45.258  INFO 15572 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-25 10:42:45.266  INFO 15572 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft HPC Pack 2008 SDK\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\matlab\runtime\win64;F:\matlab\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\work\AppData\Local\Microsoft\WindowsApps;C:\Users\work\AppData\Local\GitHubDesktop\bin;.]
+2018-05-25 10:42:45.368  INFO 15572 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-25 10:42:45.525  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-25 10:42:45.526  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-25 10:42:45.526  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-25 10:42:45.527  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-25 10:42:45.527  INFO 15572 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-25 10:42:45.527  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-25 10:42:45.529  INFO 15572 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-05-25 10:42:45.676  INFO 15572 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-05-25 10:42:45.762  INFO 15572 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-05-25 10:42:45.813  INFO 15572 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:42:46.859  INFO 15572 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-25 10:42:47.835  INFO 15572 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ccfb870, org.springframework.security.web.context.SecurityContextPersistenceFilter@b544ca4, org.springframework.security.web.header.HeaderWriterFilter@12704c6b, org.springframework.security.web.csrf.CsrfFilter@2a38d799, org.springframework.security.web.authentication.logout.LogoutFilter@351d829d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62379b8d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4deb7f53, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62996e24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63f6eeb4, org.springframework.security.web.session.SessionManagementFilter@18bcaa41, org.springframework.security.web.access.ExceptionTranslationFilter@5321d366, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@78966d1a]
+2018-05-25 10:42:48.130  WARN 15572 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-05-25 10:42:48.585  INFO 15572 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-05-25 10:42:48.613  INFO 15572 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-25 10:42:48.616  INFO 15572 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-25 10:42:48.620  INFO 15572 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-25 10:42:48.652  INFO 15572 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-25 10:42:48.657  INFO 15572 --- [restartedMain] nc.project.network.NetworkApplication    : Started NetworkApplication in 6.496 seconds (JVM running for 7.17)
+2018-05-25 10:42:50.592  INFO 15572 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-25 10:42:52.437  WARN 15572 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [107] milliseconds.

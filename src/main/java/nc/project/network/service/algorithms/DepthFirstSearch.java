@@ -1,20 +1,18 @@
 package nc.project.network.service.algorithms;
 
-import nc.project.network.entity.Area;
 import nc.project.network.service.algorithms.algorithmicEntities.Graph;
 import nc.project.network.service.algorithms.algorithmicEntities.IVertex;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-@Component
+@Service
 public class DepthFirstSearch {
 
-    public void test(Graph graph, String startVertexName) {
+    public List<IVertex> start(Graph graph, String startVertexName) {
         IVertex[] startVertex = new IVertex[1];
         graph.getVertexSet().forEach(vertex -> {
             if (vertex.getName().equals(startVertexName)) {
@@ -25,6 +23,7 @@ public class DepthFirstSearch {
         Deque<IVertex> stack = new LinkedList<>();
         List<IVertex> way = new ArrayList<>();
         startDFS(graph, startVertex[0], stack, way);
+        return way;
     }
 
     private void startDFS(Graph graph, IVertex startVertex, Deque<IVertex> stack, List<IVertex> way) {

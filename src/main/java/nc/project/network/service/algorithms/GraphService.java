@@ -144,6 +144,12 @@ public class GraphService {
             public void setBlack(boolean black) {
                 this.black = black;
             }
+
+            @Override
+            public String toString() {
+                return "{" + device +
+                        '}';
+            }
         };
     }
 }
