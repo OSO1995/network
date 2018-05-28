@@ -114,7 +114,9 @@ public class GraphService {
 
             private boolean visited;
 
-            private boolean black;
+            private int cost;
+
+            private int timeDelay;
 
             @Override
             public String getName() {
@@ -136,13 +138,23 @@ public class GraphService {
             }
 
             @Override
-            public boolean isBlack() {
-                return black;
+            public int getCost() {
+                return cost;
             }
 
             @Override
-            public void setBlack(boolean black) {
-                this.black = black;
+            public void setCost(int cost) {
+                this.cost = cost;
+            }
+
+            @Override
+            public int getTimeDelay() {
+                return timeDelay;
+            }
+
+            @Override
+            public void setTimeDelay(int timeDelay) {
+                this.timeDelay = timeDelay;
             }
 
             @Override

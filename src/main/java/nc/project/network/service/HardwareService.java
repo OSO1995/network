@@ -29,7 +29,7 @@ public class HardwareService {
         if (!areaRepository.findById(10L).isPresent()) {
             Cable[] cables = new Cable[6];
             for (int i = 0; i < cables.length; i++) {
-               cables[i] = new Cable(100);
+                cables[i] = new Cable(100, 100, 10);
             }
             Port port1 = new Port(cables[0]);
             Port port2 = new Port(cables[1]);
@@ -44,20 +44,20 @@ public class HardwareService {
             Set<Port> portsSwitch1 = new HashSet<>();
             portsSwitch1.add(port1);
             portsSwitch1.add(port2);
-            Switch switch1 = new Switch(true,portsSwitch1);
+            Switch switch1 = new Switch(true, portsSwitch1);
 
             Set<Port> portsSwitch2 = new HashSet<>();
             portsSwitch2.add(port3);
             portsSwitch2.add(port4);
             portsSwitch2.add(port5);
-            Switch switch2 = new Switch(true,portsSwitch2);
+            Switch switch2 = new Switch(true, portsSwitch2);
 
             Set<Port> portsSwitch3 = new HashSet<>();
             portsSwitch3.add(port6);
             portsSwitch3.add(port7);
             portsSwitch3.add(port8);
             portsSwitch3.add(port9);
-            Switch switch3 = new Switch(true,portsSwitch3);
+            Switch switch3 = new Switch(true, portsSwitch3);
 
             Set<Switch> switches = new HashSet<>();
             switches.add(switch1);
@@ -122,7 +122,7 @@ public class HardwareService {
     public Graph getGraph() {
         List<Area> areas = new ArrayList<>();
         areaRepository.findAll().forEach(area -> areas.add(area));
-       return graphService.getGraph(areas.get(0));
+        return graphService.getGraph(areas.get(0));
     }
 
     public Area getAreaById(Long id) throws ChangeSetPersister.NotFoundException {
@@ -149,6 +149,18 @@ public class HardwareService {
             ports.add(new Port());
         }
         return ports;
+    }
+
+    public int getTimeDelay(Cable cable) {
+        int length = cable.getLength();
+        int speed = cable.getSpeed();
+        if (length > 1000) {
+            return speed / 2;
+        } else if (length > 500) {
+            return (int) (speed / 1.5);
+        } else {
+            return speed;
+        }
     }
 
 

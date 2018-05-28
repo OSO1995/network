@@ -16,6 +16,12 @@ public class Cable {
   @Column(name = "Speed")
   private int speed;
 
+  @Column(name = "Length")
+  private int length;
+
+  @Column(name = "Cost")
+  private int cost;
+
   @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area",insertable = false,updatable = false)
   private Area area;
@@ -23,8 +29,10 @@ public class Cable {
   public Cable() {
   }
 
-  public Cable(int speed) {
+  public Cable(int speed, int length, int cost) {
     this.speed = speed;
+    this.length = length;
+    this.cost = cost;
   }
 
   public Long getId() {
@@ -41,6 +49,22 @@ public class Cable {
 
   public void setSpeed(int speed) {
     this.speed = speed;
+  }
+
+  public int getLength() {
+    return length;
+  }
+
+  public void setLength(int length) {
+    this.length = length;
+  }
+
+  public int getCost() {
+    return cost;
+  }
+
+  public void setCost(int cost) {
+    this.cost = cost;
   }
 
   @Override

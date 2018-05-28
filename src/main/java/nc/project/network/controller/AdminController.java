@@ -16,9 +16,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/user")
@@ -48,8 +53,8 @@ public class AdminController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addUser(ModelMap model) {
         model.addAttribute("link", "/user/add");
-        model.addAttribute("user",new User());
-        model.addAttribute("tariffs",tariffRepository.findAll());
+        model.addAttribute("user", new User());
+        model.addAttribute("tariffs", tariffRepository.findAll());
         model.addAttribute("cables", cableRepository.findAll());
         model.addAttribute("roles", roleRepository.findAll());
         return "/user/add";
@@ -78,7 +83,7 @@ public class AdminController {
     @RequestMapping(value = "/role/add", method = RequestMethod.GET)
     public String addRole(ModelMap model) {
         model.addAttribute("link", "/user/role/add");
-        model.addAttribute("role",new Role());
+        model.addAttribute("role", new Role());
         return "/user/role/add";
     }
 
@@ -98,16 +103,15 @@ public class AdminController {
     @RequestMapping(value = "/tariff/add", method = RequestMethod.GET)
     public String addTariff(ModelMap model) {
         model.addAttribute("link", "/user/tariff/add");
-        model.addAttribute("tariff",new Tariff());
+        model.addAttribute("tariff", new Tariff());
         return "/user/tariff/add";
     }
 
     @RequestMapping(value = "/tariff/add", method = RequestMethod.POST)
-    public String addTariff(@ModelAttribute("tariffForm") Tariff tariffForm, BindingResult bindingResult, Model model) {
-        tariffValidator.validate(tariffForm, bindingResult);
+    public String addTariff(@Valid Tariff tariffForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "/user/tariff/add";
+            return "user/tariff/add";
         }
 
         tariffRepository.save(tariffForm);
@@ -115,6 +119,10 @@ public class AdminController {
         return "redirect:/welcome";
     }
 
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.addValidators(tariffValidator);
+    }
 
 
 }

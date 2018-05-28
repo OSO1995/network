@@ -9,9 +9,13 @@ public interface IVertex {
 
     void setVisited(boolean visited);
 
-    boolean isBlack();
-
-    void setBlack(boolean black);
-
     Device getDevice();
+
+    int getCost();
+
+    void setCost(int cost);
+
+    int getTimeDelay();
+
+    void setTimeDelay(int timeDelay);
 }
