@@ -47,4 +47,9 @@ public class AuthController {
         return "start";
     }
 
+    @RequestMapping(value = {"/ex"}, method = RequestMethod.GET)
+    public void ex(Model model) throws Exception {
+
+        throw new Exception();
+    }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionHandlerController {
 
 
-    @ExceptionHandler(value = {Exception.class})
+    @ExceptionHandler(value = {Throwable.class})
     public String defaultErrorHandler() {
         return "error/ex";
     }
