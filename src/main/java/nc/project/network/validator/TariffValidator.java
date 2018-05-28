@@ -21,15 +21,15 @@ public class TariffValidator implements Validator {
         Tariff tariff = (Tariff) o;
 
         Pattern namePattern = Pattern.compile("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
-        Matcher name = namePattern.matcher(tariff.getDescription());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required","Имя не должно быть пустым!");
+        Matcher name = namePattern.matcher(tariff.getDescription());
         if (!name.matches()) {
             errors.rejectValue("description", "user.size.username");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"speed","Required");
-        if (tariff.getSpeed()<=100 || tariff.getSpeed()>=1000){
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "speed", "Required");
+        if (tariff.getSpeed() <= 100 || tariff.getSpeed() >= 1000) {
             errors.rejectValue("speed", "user.tariff.invalid.speed");
         }
 
