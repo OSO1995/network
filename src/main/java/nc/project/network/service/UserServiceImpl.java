@@ -1,10 +1,7 @@
 package nc.project.network.service;
 
 import nc.project.network.entity.*;
-import nc.project.network.repository.RequestRepository;
-import nc.project.network.repository.RoleRepository;
-import nc.project.network.repository.TariffRepository;
-import nc.project.network.repository.UserRepository;
+import nc.project.network.repository.*;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RequestRepository requestRepository;
+
+    @Autowired
+    private CableRepository cableRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -76,6 +76,26 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByID(Long id) {
         return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void addRole(Role roleForm) {
+        roleRepository.save(roleForm);
+    }
+
+    @Override
+    public Object getTariffs() {
+        return tariffRepository.findAll();
+    }
+
+    @Override
+    public Object getCables() {
+        return cableRepository.findAll();
+    }
+
+    @Override
+    public Object getRoles() {
+        return roleRepository.findAll();
     }
 
 }

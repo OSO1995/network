@@ -70,7 +70,7 @@ public class HardwareService {
             area.setCables(new HashSet<>(Arrays.asList(cables)));
 
             Role role = new Role();
-            role.setName("ROLE_TESTER");
+            role.setRoleName("ROLE_TESTER");
 
             User user1 = new User();
             user1.setUsername("user1");

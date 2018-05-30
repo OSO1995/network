@@ -17,11 +17,19 @@
     </div>
 
     <form th:action="${link}" th:object="${role}" method="POST">
-        <input type="hidden" th:field="*{id}"/>
 
-        <input class="input-text" type="text" placeholder="Enter name" th:field="*{name}">
+        <input type="hidden" th:field="*{id}" />
 
-        <button class="button" type="submit">Save</button>
+        <div class="form-group">
+            <label for="roleName">Role</label>
+            <input type="text" class="form-control" id="roleName" th:field="*{roleName}" />
+            <ul>
+                <li th:each="err : ${#fields.errors('roleName')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <button type="submit" class="btn btn-default">Save</button>
+
     </form>
 </div>
 

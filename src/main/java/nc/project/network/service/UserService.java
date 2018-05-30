@@ -1,8 +1,10 @@
 package nc.project.network.service;
 
+import nc.project.network.entity.Role;
 import nc.project.network.entity.Tariff;
 import nc.project.network.entity.User;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,4 +24,11 @@ public interface UserService {
 
   User findByID(Long id);
 
+  void addRole(Role roleForm);
+
+  Object getTariffs();
+
+  Object getCables();
+
+  Object getRoles();
 }

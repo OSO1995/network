@@ -4,12 +4,17 @@ import nc.project.network.entity.*;
 import nc.project.network.service.algorithms.algorithmicEntities.Graph;
 import nc.project.network.service.algorithms.algorithmicEntities.IEdge;
 import nc.project.network.service.algorithms.algorithmicEntities.IVertex;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.spec.IvParameterSpec;
 import java.util.*;
 
 @Service
 public class GraphService {
+
+    @Autowired
+    private DijkstraService dijkstraService;
 
     public Graph getGraph(Area area) {
         Set<IVertex> vertexSet = new HashSet<>();
@@ -151,7 +156,7 @@ public class GraphService {
         };
     }
 
-    public List<IVertex> getAdjacentVertex(Graph G, IVertex currentVertex) {
+    private List<IVertex> getAdjacentVertex(Graph G, IVertex currentVertex) {
 
         List<IVertex> result = new ArrayList<>();
 
@@ -169,5 +174,28 @@ public class GraphService {
         });
 
         return result;
+    }
+
+    public List<IVertex> getWay(Graph G, String start, String end){
+        List<IVertex> result = new ArrayList<>();
+        dijkstraService.start(G,start);
+        IVertex[] endVertex = new IVertex[1];
+        G.getVertexSet().forEach(vertex -> {
+            if (end.equals(vertex.getName())){
+                endVertex[0] = vertex;
+            }
+        });
+
+        fillAllPrevious(endVertex[0],result);
+
+        return result;
+    }
+
+    private void fillAllPrevious(IVertex currentVertex,List<IVertex> result) {
+        result.add(currentVertex);
+        IVertex vertex = currentVertex.getPrevious();
+        if (vertex.getPrevious() != null){
+            fillAllPrevious(vertex,result);
+        }
     }
 }

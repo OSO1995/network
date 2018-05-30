@@ -17,11 +17,19 @@
     </div>
 
     <form th:action="${link}" th:object="${request}" method="POST">
-        <input type="hidden" th:field="*{id}"/>
 
-        <input class="input-text" type="text" placeholder="Enter request" th:field="*{request}">
+        <input type="hidden" th:field="*{id}" />
 
-        <button class="button" type="submit">Save</button>
+        <div class="form-group">
+            <label for="requestBody">Request</label>
+            <input type="text" class="form-control" id="requestBody" th:field="*{requestBody}" />
+            <ul>
+                <li th:each="err : ${#fields.errors('requestBody')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <button type="submit" class="btn btn-default">Save</button>
+
     </form>
 </div>
 

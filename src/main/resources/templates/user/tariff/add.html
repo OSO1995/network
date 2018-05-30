@@ -21,7 +21,7 @@
         <input type="hidden" th:field="*{id}" />
 
         <div class="form-group">
-            <label for="description">Author Description</label>
+            <label for="description">Description</label>
             <input type="text" class="form-control" id="description" th:field="*{description}" />
             <ul>
                 <li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li>

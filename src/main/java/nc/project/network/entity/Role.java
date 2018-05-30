@@ -18,7 +18,7 @@ public class Role implements GrantedAuthority {
   private Long id;
 
   @Column(name = "Name")
-  private String name;
+  private String roleName;
 
   @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles",cascade = CascadeType.ALL)
   private Set<User> users;
@@ -34,12 +34,12 @@ public class Role implements GrantedAuthority {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public String getRoleName() {
+    return roleName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setRoleName(String roleName) {
+    this.roleName = roleName;
   }
 
   public Set<User> getUsers() {
@@ -54,12 +54,12 @@ public class Role implements GrantedAuthority {
   public String toString() {
     return "Role{" +
             "id=" + id +
-            ", name='" + name + '\'' +
+            ", name='" + roleName + '\'' +
             '}';
   }
 
   @Override
   public String getAuthority() {
-    return name;
+    return roleName;
   }
 }

@@ -39,7 +39,8 @@ public class DijkstraService {
     private IVertex getStartVertex(Set<IVertex> vertexSet, String startVertexName) {
         IVertex[] result = new IVertex[1];
         vertexSet.forEach(vertex -> {
-            if (vertex.getName().equals(startVertexName)) {
+            String name = vertex.getName();
+            if (name.equals(startVertexName)) {
                 result[0] = vertex;
             }
         });

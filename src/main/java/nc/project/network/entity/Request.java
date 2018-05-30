@@ -19,14 +19,14 @@ public class Request {
   private UserBase user;
 
   @Column(name = "Request")
-  private String request;
+  private String requestBody;
 
   public Request() {
   }
 
-  public Request(User user, String request) {
+  public Request(User user, String requestBody) {
     this.user = user;
-    this.request = request;
+    this.requestBody = requestBody;
   }
 
   public Long getId() {
@@ -45,12 +45,12 @@ public class Request {
     this.user = user;
   }
 
-  public String getRequest() {
-    return request;
+  public String getRequestBody() {
+    return requestBody;
   }
 
-  public void setRequest(String request) {
-    this.request = request;
+  public void setRequestBody(String request) {
+    this.requestBody = request;
   }
 
   @Override
@@ -58,7 +58,7 @@ public class Request {
     return "Request{" +
         "id=" + id +
         ", user=" + user +
-        ", request='" + request + '\'' +
+        ", request='" + requestBody + '\'' +
         '}';
   }
 }

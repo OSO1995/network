@@ -14,9 +14,6 @@ import java.util.regex.Pattern;
 @Component
 public class UserValidator implements Validator {
 
-    @Autowired
-    private UserService userService;
-
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.equals(aClass);
@@ -26,24 +23,33 @@ public class UserValidator implements Validator {
     public void validate(Object o, Errors errors) {
         User user = (User) o;
 
-        Pattern usernamePattern = Pattern.compile("^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$");
-        Pattern passwordPattern = Pattern.compile("(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$");
-        Pattern namePattern = Pattern.compile("^[а-яА-ЯёЁa-zA-Z0-9]+$");
+        Pattern usernamePattern = Pattern.compile(Constants.TEXT2_PATTERN);
+        Pattern passwordPattern = Pattern.compile(Constants.PASSWORD_PATTERN);
+        Pattern namePattern = Pattern.compile(Constants.TEXT_PATTERN);
         Matcher firstNameMatcher = namePattern.matcher(user.getPersonalInfo().getFirstName());
         Matcher secondNameMatcher = namePattern.matcher(user.getPersonalInfo().getSecondName());
         Matcher userMatcher = usernamePattern.matcher(user.getUsername());
         Matcher passMather = passwordPattern.matcher(user.getPassword());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required");
-        if (user.getUsername().length() < 2 || user.getUsername().length() > 20) {
-            errors.rejectValue("username", "user.size.username");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required","Имя не должно быть пустым!");
+        validateUserName(errors, user, userMatcher);
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required","Пароль не должен быть пустым!");
+        validatePassword(errors, user, passMather);
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.firstName", "Required","Поле не должно быть пустым!");
+        if (!firstNameMatcher.matches()){
+            errors.rejectValue("personalInfo.firstName", "user.name.invalid");
         }
 
-        if (!userMatcher.matches()){
-            errors.rejectValue("username", "user.pattern.invalid");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.secondName", "Required","Поле не должно быть пустым!");
+        if (!secondNameMatcher.matches()){
+            errors.rejectValue("personalInfo.secondName", "user.name.invalid");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required");
+    }
+
+    private void validatePassword(Errors errors, User user, Matcher passMather) {
         if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
             errors.rejectValue("password", "user.size.password");
         }
@@ -55,16 +61,15 @@ public class UserValidator implements Validator {
         if (!user.getConfirmPassword().equals(user.getPassword())) {
             errors.rejectValue("confirmPassword", "Different.userForm.password");
         }
+    }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.firstName", "Required");
-        if (!firstNameMatcher.matches()){
-            errors.rejectValue("personalInfo.firstName", "user.name.invalid");
+    private void validateUserName(Errors errors, User user, Matcher userMatcher) {
+        if (user.getUsername().length() < 2 || user.getUsername().length() > 20) {
+            errors.rejectValue("username", "user.size.username");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.secondName", "Required");
-        if (!secondNameMatcher.matches()){
-            errors.rejectValue("personalInfo.secondName", "user.name.invalid");
+        if (!userMatcher.matches()){
+            errors.rejectValue("username", "user.pattern.invalid");
         }
-
     }
 }
