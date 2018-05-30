@@ -43,10 +43,6 @@ public class UserValidator implements Validator {
             errors.rejectValue("username", "user.pattern.invalid");
         }
 
-        if (userService.findByUsername(user.getUsername()) != null) {
-            errors.rejectValue("username", "user.duplicate.username");
-        }
-
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required");
         if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
             errors.rejectValue("password", "user.size.password");

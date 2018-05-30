@@ -28,8 +28,9 @@ public class HardwareService {
     private void init() {
         if (!areaRepository.findById(10L).isPresent()) {
             Cable[] cables = new Cable[6];
+            Random random = new Random();
             for (int i = 0; i < cables.length; i++) {
-                cables[i] = new Cable(100, 100, 10);
+                cables[i] = new Cable(100 + random.nextInt(300), 100, 5 + (random.nextInt(20)));
             }
             Port port1 = new Port(cables[0]);
             Port port2 = new Port(cables[1]);

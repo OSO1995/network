@@ -10,18 +10,6 @@ spring:
     basename: messages
 ---
 spring:
-  profiles: dev
-  jpa:
-    hibernate:
-      ddl-auto: update
-logging:
-  file: logs/mvc_dev.log
-  level:
-    org.springframework.web: DEBUG
-    ru.javazen.telegram.bot: DEBUG
-    org.hibernate: DEBUG
----
-spring:
   profiles: production
   jpa:
     hibernate:
@@ -39,3 +27,4 @@ logging:
   level:
     org.springframework.web: WARN
     org.hibernate: WARN
+    org.apache.logging.log4j: INFO

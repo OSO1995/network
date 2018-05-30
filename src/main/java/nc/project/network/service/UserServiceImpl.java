@@ -5,13 +5,19 @@ import nc.project.network.repository.RequestRepository;
 import nc.project.network.repository.RoleRepository;
 import nc.project.network.repository.TariffRepository;
 import nc.project.network.repository.UserRepository;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger logger = LogManager.getLogger(UserServiceImpl.class.getName());
 
     @Autowired
     private UserRepository userRepository;
@@ -41,6 +47,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addTariff(Tariff tariff) {
+        logger.log(Level.INFO,"_________KY KY_______________________________KY KY_______");
         tariffRepository.save(tariff);
     }
 

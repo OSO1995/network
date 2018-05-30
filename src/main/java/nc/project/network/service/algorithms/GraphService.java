@@ -6,9 +6,7 @@ import nc.project.network.service.algorithms.algorithmicEntities.IEdge;
 import nc.project.network.service.algorithms.algorithmicEntities.IVertex;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class GraphService {
@@ -34,23 +32,23 @@ public class GraphService {
             if (x.getDevice() instanceof Switch) {
                 Switch aSwitch = (Switch) x.getDevice();
                 aSwitch.getPorts().forEach(port -> {
-                    setEdgeVertex(edge, x,port.getCable().toString());
+                    setEdgeVertex(edge, x, port.getCable().toString());
                 });
             }
 
             if (x.getDevice() instanceof User) {
                 User user = (User) x.getDevice();
-                setEdgeVertex(edge,x,user.getPersonalInfo().getCable().toString());
+                setEdgeVertex(edge, x, user.getPersonalInfo().getCable().toString());
             }
         });
     }
 
     private void setEdgeVertex(IEdge edge, IVertex vertex, String currentCable) {
         String name = edge.getName();
-        if (name.equals(currentCable)){
-            if(edge.getFirstVertex() == null){
+        if (name.equals(currentCable)) {
+            if (edge.getFirstVertex() == null) {
                 edge.setFirstVertex(vertex);
-            }else if (edge.getSecondVertex() == null){
+            } else if (edge.getSecondVertex() == null) {
                 edge.setSecondVertex(vertex);
             }
         }
@@ -114,9 +112,7 @@ public class GraphService {
 
             private boolean visited;
 
-            private int cost;
-
-            private int timeDelay;
+            private IVertex previous;
 
             @Override
             public String getName() {
@@ -138,23 +134,13 @@ public class GraphService {
             }
 
             @Override
-            public int getCost() {
-                return cost;
+            public IVertex getPrevious() {
+                return previous;
             }
 
             @Override
-            public void setCost(int cost) {
-                this.cost = cost;
-            }
-
-            @Override
-            public int getTimeDelay() {
-                return timeDelay;
-            }
-
-            @Override
-            public void setTimeDelay(int timeDelay) {
-                this.timeDelay = timeDelay;
+            public void setPrevious(IVertex vertex) {
+                this.previous = vertex;
             }
 
             @Override
@@ -163,5 +149,25 @@ public class GraphService {
                         '}';
             }
         };
+    }
+
+    public List<IVertex> getAdjacentVertex(Graph G, IVertex currentVertex) {
+
+        List<IVertex> result = new ArrayList<>();
+
+        Set<IEdge> edges = G.getEdgeSet();
+        edges.forEach(edge -> {
+
+            IVertex first = edge.getFirstVertex();
+            IVertex second = edge.getSecondVertex();
+
+            if (first == currentVertex) {
+                result.add(second);
+            } else if (second == currentVertex) {
+                result.add(first);
+            }
+        });
+
+        return result;
     }
 }

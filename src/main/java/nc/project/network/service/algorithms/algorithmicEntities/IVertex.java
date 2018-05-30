@@ -11,11 +11,7 @@ public interface IVertex {
 
     Device getDevice();
 
-    int getCost();
+    IVertex getPrevious();
 
-    void setCost(int cost);
-
-    int getTimeDelay();
-
-    void setTimeDelay(int timeDelay);
+    void setPrevious(IVertex vertex);
 }

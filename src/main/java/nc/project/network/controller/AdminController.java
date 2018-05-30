@@ -7,6 +7,7 @@ import nc.project.network.repository.CableRepository;
 import nc.project.network.repository.RoleRepository;
 import nc.project.network.repository.TariffRepository;
 import nc.project.network.repository.UserRepository;
+import nc.project.network.service.UserService;
 import nc.project.network.validator.RoleValidator;
 import nc.project.network.validator.TariffValidator;
 import nc.project.network.validator.UserValidator;
@@ -31,6 +32,9 @@ public class AdminController {
 
     @Autowired
     TariffRepository tariffRepository;
+
+    @Autowired
+    UserService userService;
 
     @Autowired
     CableRepository cableRepository;
@@ -114,7 +118,7 @@ public class AdminController {
             return "user/tariff/add";
         }
 
-        tariffRepository.save(tariffForm);
+        userService.addTariff(tariffForm);
 
         return "redirect:/welcome";
     }
