@@ -10,25 +10,25 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserService {
 
-  void delete(Long id);
+    void delete(Long id);
 
-  void save(User user);
+    void save(User user);
 
-  void addTariff(Tariff tariff);
+    void addTariff(Tariff tariff);
 
-  int calculateCost(Long userId, int speed) throws ChangeSetPersister.NotFoundException;
+    int calculateCost(Long userId, int speed) throws ChangeSetPersister.NotFoundException;
 
-  void addRequest(String request, Long userID);
+    void addRequest(String request, Long userID);
 
-  User findByUsername(String username);
+    User findByUsername(String username);
 
-  User findByID(Long id);
+    User findByID(Long id);
 
-  void addRole(Role roleForm);
+    void addRole(Role roleForm);
 
-  Object getTariffs();
+    Object getTariffs();
 
-  Object getCables();
+    Object getCables();
 
-  Object getRoles();
+    Object getRoles();
 }

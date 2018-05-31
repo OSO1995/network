@@ -21,7 +21,7 @@ public class WayValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "secondVertex", "Required", "Поле не должно быть пустым!");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "parameterWay", "Required", "Поле не должно быть пустым!");
         int parameter = way.getParameterWay();
-        if (parameter != 0 && parameter != 1){
+        if (parameter != 0 && parameter != 1) {
             errors.rejectValue("parameterWay", "way.parameter");
         }
     }

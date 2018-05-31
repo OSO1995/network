@@ -41,7 +41,7 @@ public final class Dijkstra {
      * the graph are unreachable from s, they will be reported at distance
      * +infinity.
      *
-     * @param graph The graph upon which to run Dijkstra's algorithm.
+     * @param graph  The graph upon which to run Dijkstra's algorithm.
      * @param source The source node in the graph.
      * @return A map from nodes in the graph to their distances from the source.
      */
@@ -65,7 +65,7 @@ public final class Dijkstra {
         /* Add each node to the Fibonacci heap at distance +infinity since
          * initially all nodes are unreachable.
          */
-        for (T node: graph)
+        for (T node : graph)
             entries.put(node, pq.enqueue(node, Double.POSITIVE_INFINITY));
 
         /* Update the source so that it's at distance 0.0 from itself; after
@@ -103,7 +103,7 @@ public final class Dijkstra {
                 if (pathCost < dest.getPriority()) {
                     pq.decreaseKey(dest, pathCost);
 
-                    if (dest.getValue() instanceof IVertex){
+                    if (dest.getValue() instanceof IVertex) {
                         ((IVertex) dest.getValue()).setPrevious((IVertex) curr.getValue());
                     }
                 }

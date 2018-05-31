@@ -29,19 +29,19 @@ public class UserValidator implements Validator {
         Matcher userMatcher = usernamePattern.matcher(user.getUsername());
         Matcher passMather = passwordPattern.matcher(user.getPassword());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required","Имя не должно быть пустым!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required", "Имя не должно быть пустым!");
         validateUserName(errors, user, userMatcher);
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required","Пароль не должен быть пустым!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required", "Пароль не должен быть пустым!");
         validatePassword(errors, user, passMather);
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.firstName", "Required","Поле не должно быть пустым!");
-        if (!firstNameMatcher.matches()){
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.firstName", "Required", "Поле не должно быть пустым!");
+        if (!firstNameMatcher.matches()) {
             errors.rejectValue("personalInfo.firstName", "user.name.invalid");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.secondName", "Required","Поле не должно быть пустым!");
-        if (!secondNameMatcher.matches()){
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "personalInfo.secondName", "Required", "Поле не должно быть пустым!");
+        if (!secondNameMatcher.matches()) {
             errors.rejectValue("personalInfo.secondName", "user.name.invalid");
         }
 
@@ -52,7 +52,7 @@ public class UserValidator implements Validator {
             errors.rejectValue("password", "user.size.password");
         }
 
-        if(!passMather.matches()){
+        if (!passMather.matches()) {
             errors.rejectValue("password", "password.pattern.invalid");
         }
 
@@ -66,7 +66,7 @@ public class UserValidator implements Validator {
             errors.rejectValue("username", "user.size.username");
         }
 
-        if (!userMatcher.matches()){
+        if (!userMatcher.matches()) {
             errors.rejectValue("username", "user.pattern.invalid");
         }
     }

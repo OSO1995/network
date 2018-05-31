@@ -15,7 +15,8 @@
 
     <div class="form-group">
         <label for="firstVertex">Name</label>
-        <input class="input-text" type="text" placeholder="Enter start vertex" id="firstVertex" th:field="*{firstVertex}">
+        <input class="input-text" type="text" placeholder="Enter start vertex" id="firstVertex"
+               th:field="*{firstVertex}">
         <ul>
             <li th:each="err : ${#fields.errors('firstVertex')}" th:text="${err}"></li>
         </ul>
@@ -24,7 +25,8 @@
 
     <div class="form-group">
         <label for="secondVertex">Name</label>
-        <input class="input-text" type="text" placeholder="Enter end vertex" id="secondVertex" th:field="*{secondVertex}">
+        <input class="input-text" type="text" placeholder="Enter end vertex" id="secondVertex"
+               th:field="*{secondVertex}">
         <ul>
             <li th:each="err : ${#fields.errors('secondVertex')}" th:text="${err}"></li>
         </ul>
@@ -33,7 +35,8 @@
 
     <div class="form-group">
         <label for="parameterWay">Name</label>
-        <input class="input-text" type="text" placeholder="Enter parameter" id="parameterWay" th:field="*{parameterWay}">
+        <input class="input-text" type="text" placeholder="Enter parameter" id="parameterWay"
+               th:field="*{parameterWay}">
         <ul>
             <li th:each="err : ${#fields.errors('parameterWay')}" th:text="${err}"></li>
         </ul>
@@ -41,7 +44,6 @@
 
     <button class="button" type="submit">Go!</button>
 </form>
-
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

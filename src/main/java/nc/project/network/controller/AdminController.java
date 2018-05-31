@@ -9,8 +9,6 @@ import nc.project.network.validator.TariffValidator;
 import nc.project.network.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-import java.util.Collection;
 
 @Controller
 @RequestMapping("/user")
@@ -57,11 +54,13 @@ public class AdminController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addUser(ModelMap model) {
+
         model.addAttribute("link", "/user/add");
         model.addAttribute("user", new User());
         model.addAttribute("tariffs", userService.getTariffs());
         model.addAttribute("cables", userService.getCables());
         model.addAttribute("roles", userService.getRoles());
+
         return "/user/add";
     }
 
@@ -85,8 +84,10 @@ public class AdminController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/role/add", method = RequestMethod.GET)
     public String addRole(ModelMap model) {
+
         model.addAttribute("link", "/user/role/add");
         model.addAttribute("role", new Role());
+
         return "/user/role/add";
     }
 

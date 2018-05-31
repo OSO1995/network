@@ -8,6 +8,7 @@ package nc.project.network.service.algorithms.algorithmicEntities;
  * real-valued length.  Internally, the class is represented by an adjacency
  * list.
  */
+
 import java.util.*; // For HashMap
 
 public final class DirectedGraph<T> implements Iterable<T> {
@@ -39,8 +40,8 @@ public final class DirectedGraph<T> implements Iterable<T> {
      * existed, the length is updated to the specified value.  If either
      * endpoint does not exist in the graph, throws a NoSuchElementException.
      *
-     * @param start The start node.
-     * @param dest The destination node.
+     * @param start  The start node.
+     * @param dest   The destination node.
      * @param length The length of the edge.
      * @throws NoSuchElementException If either the start or destination nodes
      *                                do not exist.
@@ -60,7 +61,7 @@ public final class DirectedGraph<T> implements Iterable<T> {
      * exist, this throws a NoSuchElementException.
      *
      * @param start The start node.
-     * @param dest The destination node.
+     * @param dest  The destination node.
      * @throws NoSuchElementException If either node is not in the graph.
      */
     public void removeEdge(T start, T dest) {

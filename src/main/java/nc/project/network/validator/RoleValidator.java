@@ -23,7 +23,7 @@ public class RoleValidator implements Validator {
         Pattern namePattern = Pattern.compile(Constants.TEXT_PATTERN);
         Matcher name = namePattern.matcher(role.getRoleName());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "roleName", "Required","Поле не должно быть пустым!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "roleName", "Required", "Поле не должно быть пустым!");
         if (!name.matches()) {
             errors.rejectValue("roleName", "user.size.username");
         }

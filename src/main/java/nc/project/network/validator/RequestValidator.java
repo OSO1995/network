@@ -24,7 +24,7 @@ public class RequestValidator implements Validator {
         Pattern namePattern = Pattern.compile(Constants.TEXT_PATTERN);
         Matcher name = namePattern.matcher(role.getRequestBody());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "requestBody", "Required","Вы не ввели сообщение!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "requestBody", "Required", "Вы не ввели сообщение!");
         if (!name.matches()) {
             errors.rejectValue("requestBody", "user.size.username");
         }

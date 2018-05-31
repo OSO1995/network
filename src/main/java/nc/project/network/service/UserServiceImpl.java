@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addTariff(Tariff tariff) {
         tariffRepository.save(tariff);
-        logger.log(Level.INFO,"__________Add new tariff__________");
+        logger.log(Level.INFO, "__________Add new tariff__________");
     }
 
     @Override
-    public void addRequest(String requestBody,Long userID) {
-        Request request = new Request(userRepository.findById(userID).get(),requestBody);
+    public void addRequest(String requestBody, Long userID) {
+        Request request = new Request(userRepository.findById(userID).get(), requestBody);
         requestRepository.save(request);
-        logger.log(Level.INFO,"__________Add new request__________");
+        logger.log(Level.INFO, "__________Add new request__________");
     }
 
     @Override
@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int calculateCost(Long userId, int necessarySpeed) throws ChangeSetPersister.NotFoundException {
         User currentUser = userRepository.findById(userId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        return isSimple(currentUser,necessarySpeed) ? 100 : 200;
+        return isSimple(currentUser, necessarySpeed) ? 100 : 200;
     }
 
     private boolean isSimple(User currentUser, int necessarySpeed) {
@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addRole(Role roleForm) {
         roleRepository.save(roleForm);
-        logger.log(Level.INFO,"__________Add new role__________");
+        logger.log(Level.INFO, "__________Add new role__________");
     }
 
     @Override

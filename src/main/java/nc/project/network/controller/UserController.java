@@ -2,9 +2,7 @@ package nc.project.network.controller;
 
 import nc.project.network.controller.forms.Way;
 import nc.project.network.entity.Request;
-import nc.project.network.entity.Role;
 import nc.project.network.entity.User;
-import nc.project.network.repository.RequestRepository;
 import nc.project.network.service.HardwareService;
 import nc.project.network.service.UserService;
 import nc.project.network.service.algorithms.GraphService;
@@ -20,7 +18,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -59,7 +56,7 @@ public class UserController {
     @RequestMapping(value = "/user/request/add", method = RequestMethod.GET)
     public String add(ModelMap model) {
         model.addAttribute("link", "/user/request/add");
-        model.addAttribute("request",new Request());
+        model.addAttribute("request", new Request());
         return "/user/request/add";
     }
 
@@ -72,23 +69,24 @@ public class UserController {
 
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        userService.addRequest(requestForm.getRequestBody(),currentUser.getId());
+        userService.addRequest(requestForm.getRequestBody(), currentUser.getId());
 
-        return "redirect:/welcome";
+        return "/success";
     }
 
     @RequestMapping(value = {"/chooseWay"}, method = RequestMethod.GET)
     public String getMyWay(Model model) {
+
         model.addAttribute("link", "/chooseWay");
         model.addAttribute("way", new Way());
         return "/chooseWay";
     }
 
     @RequestMapping(value = {"/chooseWay"}, method = RequestMethod.POST)
-    public String setMyWay(@Valid Way wayForm,Model model) {
+    public String setMyWay(@Valid Way wayForm, Model model) {
 
         Graph G = hardwareService.getGraph();
-        List<IVertex> result = graphService.getWay(G,wayForm.getFirstVertex(),wayForm.getSecondVertex(),wayForm.getParameterWay());
+        List<IVertex> result = graphService.getWay(G, wayForm.getFirstVertex(), wayForm.getSecondVertex(), wayForm.getParameterWay());
 
         Collections.reverse(result);
 

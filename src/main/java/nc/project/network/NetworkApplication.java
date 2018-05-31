@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class NetworkApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NetworkApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(NetworkApplication.class, args);
+    }
 
 }

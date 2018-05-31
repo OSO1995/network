@@ -30,12 +30,12 @@ public class HardwareService {
             Cable[] cables = new Cable[6];
 
 
-            cables[0] = new Cable(100, 103, 1 );//свичи верх
-            cables[1] = new Cable(100, 103, 1 );//свичи верх
-            cables[2] = new Cable(100, 102, 4 );//свичи середина
-            cables[3] = new Cable(100, 105, 5 );//юзеры
-            cables[4] = new Cable(100, 106, 6 );//юзеры
-            cables[5] = new Cable(100, 107, 7 );//юзеры
+            cables[0] = new Cable(100, 103, 1);//свичи верх
+            cables[1] = new Cable(100, 103, 1);//свичи верх
+            cables[2] = new Cable(100, 102, 4);//свичи середина
+            cables[3] = new Cable(100, 105, 5);//юзеры
+            cables[4] = new Cable(100, 106, 6);//юзеры
+            cables[5] = new Cable(100, 107, 7);//юзеры
 
 
             Port port1 = new Port(cables[0]);
@@ -166,7 +166,7 @@ public class HardwareService {
         int speed = cable.getSpeed();
         int result = length - speed;
         if (result > 0)
-        return length - speed;
+            return length - speed;
         else
             throw new IllegalArgumentException("Недопустимые значения длины кабеля и скорости");
     }

@@ -176,26 +176,26 @@ public class GraphService {
         return result;
     }
 
-    public List<IVertex> getWay(Graph G, String start, String end, int parameter){
+    public List<IVertex> getWay(Graph G, String start, String end, int parameter) {
         List<IVertex> result = new ArrayList<>();
-        dijkstraService.start(G,start,parameter);
+        dijkstraService.start(G, start, parameter);
         IVertex[] endVertex = new IVertex[1];
         G.getVertexSet().forEach(vertex -> {
-            if (end.equals(vertex.getName())){
+            if (end.equals(vertex.getName())) {
                 endVertex[0] = vertex;
             }
         });
 
-        fillAllPrevious(endVertex[0],result);
+        fillAllPrevious(endVertex[0], result);
 
         return result;
     }
 
-    private void fillAllPrevious(IVertex currentVertex,List<IVertex> result) {
+    private void fillAllPrevious(IVertex currentVertex, List<IVertex> result) {
         result.add(currentVertex);
         IVertex vertex = currentVertex.getPrevious();
-        if (vertex.getPrevious() != null){
-            fillAllPrevious(vertex,result);
+        if (vertex.getPrevious() != null) {
+            fillAllPrevious(vertex, result);
         }
     }
 }

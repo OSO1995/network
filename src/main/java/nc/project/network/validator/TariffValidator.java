@@ -22,7 +22,7 @@ public class TariffValidator implements Validator {
 
         Pattern namePattern = Pattern.compile(Constants.TEXT2_PATTERN);
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required","Поле не должно быть пустым!");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required", "Поле не должно быть пустым!");
         Matcher name = namePattern.matcher(tariff.getDescription());
         if (!name.matches()) {
             errors.rejectValue("description", "user.size.username");
