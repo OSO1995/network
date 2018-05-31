@@ -94,9 +94,6 @@ public class AdminController {
     @RequestMapping(value = "/tariff/add", method = RequestMethod.GET)
     public String addTariff(ModelMap model) {
 
-//        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-
         model.addAttribute("link", "/user/tariff/add");
         model.addAttribute("tariff", new Tariff());
         return "/user/tariff/add";

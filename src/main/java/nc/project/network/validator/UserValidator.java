@@ -1,8 +1,6 @@
 package nc.project.network.validator;
 
 import nc.project.network.entity.User;
-import nc.project.network.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

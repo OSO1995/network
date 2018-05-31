@@ -7,15 +7,19 @@
 </head>
 <body>
 <div class="container">
-    <h1>test</h1>
+    <h1>You way:</h1>
 </div>
 
 <div class="container">
     <div class="starter-template">
         <h2>
-            <span th:text="'Way: ' + ${message}"></span>
+            <span th:text="${message}"></span>
         </h2>
     </div>
+</div>
+
+<div class="alert alert-light" role="alert">
+    <p>Click <a th:href="@{/welcome}">here</a> to continue.</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

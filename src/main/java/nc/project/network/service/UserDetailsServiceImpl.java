@@ -2,9 +2,11 @@ package nc.project.network.service;
 
 import nc.project.network.entity.Role;
 import nc.project.network.entity.User;
-import nc.project.network.repository.RoleRepository;
 import nc.project.network.repository.UserRepository;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +19,8 @@ import java.util.Collections;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
+    private static final Logger logger = LogManager.getLogger(UserDetailsServiceImpl.class.getName());
 
     @Autowired
     private UserRepository userRepository;
@@ -55,6 +59,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        logger.log(Level.INFO,"__________downloading the user from DB__________");
         return userRepository.findByUsername(username).orElseThrow(() ->
                 new UsernameNotFoundException("user " + username + " was not found!"));
     }

@@ -14,7 +14,7 @@ public class Request {
   @Column(name = "ID_Request")
   private Long id;
 
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "ID_User")
   private UserBase user;
 

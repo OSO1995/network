@@ -14,11 +14,11 @@ public class Port {
   @Column(name = "ID_Port")
   private Long id;
 
-  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Cable")
   private Cable cable;
 
-  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Switch", insertable=false, updatable=false)
   private Switch switcch;
 

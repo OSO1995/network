@@ -28,15 +28,24 @@ public class HardwareService {
     private void init() {
         if (!areaRepository.findById(10L).isPresent()) {
             Cable[] cables = new Cable[6];
-            Random random = new Random();
-            for (int i = 0; i < cables.length; i++) {
-                cables[i] = new Cable(100 + random.nextInt(300), 100, 5 + (random.nextInt(20)));
-            }
+
+
+            cables[0] = new Cable(100, 103, 1 );//свичи верх
+            cables[1] = new Cable(100, 103, 1 );//свичи верх
+            cables[2] = new Cable(100, 102, 4 );//свичи середина
+            cables[3] = new Cable(100, 105, 5 );//юзеры
+            cables[4] = new Cable(100, 106, 6 );//юзеры
+            cables[5] = new Cable(100, 107, 7 );//юзеры
+
+
             Port port1 = new Port(cables[0]);
             Port port2 = new Port(cables[1]);
+
+
             Port port3 = new Port(cables[1]);
             Port port4 = new Port(cables[2]);
             Port port5 = new Port(cables[5]);
+
             Port port6 = new Port(cables[0]);
             Port port7 = new Port(cables[2]);
             Port port8 = new Port(cables[4]);
@@ -155,13 +164,11 @@ public class HardwareService {
     public int getTimeDelay(Cable cable) {
         int length = cable.getLength();
         int speed = cable.getSpeed();
-        if (length > 1000) {
-            return speed / 2;
-        } else if (length > 500) {
-            return (int) (speed / 1.5);
-        } else {
-            return speed;
-        }
+        int result = length - speed;
+        if (result > 0)
+        return length - speed;
+        else
+            throw new IllegalArgumentException("Недопустимые значения длины кабеля и скорости");
     }
 
 

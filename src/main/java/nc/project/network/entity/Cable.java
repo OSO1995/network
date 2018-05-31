@@ -22,7 +22,7 @@ public class Cable {
   @Column(name = "Cost")
   private int cost;
 
-  @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area",insertable = false,updatable = false)
   private Area area;
 

@@ -47,14 +47,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addTariff(Tariff tariff) {
-        logger.log(Level.INFO,"_________KY KY_______________________________KY KY_______");
         tariffRepository.save(tariff);
+        logger.log(Level.INFO,"__________Add new tariff__________");
     }
 
     @Override
     public void addRequest(String requestBody,Long userID) {
         Request request = new Request(userRepository.findById(userID).get(),requestBody);
         requestRepository.save(request);
+        logger.log(Level.INFO,"__________Add new request__________");
     }
 
     @Override
@@ -81,6 +82,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addRole(Role roleForm) {
         roleRepository.save(roleForm);
+        logger.log(Level.INFO,"__________Add new role__________");
     }
 
     @Override

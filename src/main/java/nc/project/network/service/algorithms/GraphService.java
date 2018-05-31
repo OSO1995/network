@@ -176,9 +176,9 @@ public class GraphService {
         return result;
     }
 
-    public List<IVertex> getWay(Graph G, String start, String end){
+    public List<IVertex> getWay(Graph G, String start, String end, int parameter){
         List<IVertex> result = new ArrayList<>();
-        dijkstraService.start(G,start);
+        dijkstraService.start(G,start,parameter);
         IVertex[] endVertex = new IVertex[1];
         G.getVertexSet().forEach(vertex -> {
             if (end.equals(vertex.getName())){

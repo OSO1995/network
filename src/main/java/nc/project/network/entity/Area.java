@@ -14,15 +14,15 @@ public class Area {
   @Column(name = "ID_Area")
   private Long id;
 
-  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area")
   private Set<Switch> switches;
 
-  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area")
   private Set<User> users;
 
-  @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JoinColumn(name = "ID_Area")
   private Set<Cable> cables;
 
