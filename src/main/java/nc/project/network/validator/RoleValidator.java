@@ -20,12 +20,12 @@ public class RoleValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Role role = (Role) o;
 
-        Pattern namePattern = Pattern.compile("^[а-яА-ЯёЁa-zA-Z0-9]+$");
-        Matcher name = namePattern.matcher(role.getName());
+        Pattern namePattern = Pattern.compile(Constants.TEXT_PATTERN);
+        Matcher name = namePattern.matcher(role.getRoleName());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "roleName", "Required", "Поле не должно быть пустым!");
         if (!name.matches()) {
-            errors.rejectValue("name", "user.size.username");
+            errors.rejectValue("roleName", "user.size.username");
         }
     }
 }

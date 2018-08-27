@@ -21,12 +21,12 @@ public class RequestValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Request role = (Request) o;
 
-        Pattern namePattern = Pattern.compile("^[а-яА-ЯёЁa-zA-Z0-9]+$");
-        Matcher name = namePattern.matcher(role.getRequest());
+        Pattern namePattern = Pattern.compile(Constants.TEXT_PATTERN);
+        Matcher name = namePattern.matcher(role.getRequestBody());
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "request", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "requestBody", "Required", "Вы не ввели сообщение!");
         if (!name.matches()) {
-            errors.rejectValue("request", "user.size.username");
+            errors.rejectValue("requestBody", "user.size.username");
         }
     }
 

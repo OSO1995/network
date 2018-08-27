@@ -6,55 +6,79 @@ import javax.persistence.*;
 @Table(name = "Cables")
 public class Cable {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "ID_Cable")
-  private Long id;
+    @Id
+    @SequenceGenerator(name = "cable_id_sequence_gen",
+            sequenceName = "cable_id_sequence", initialValue = 10)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cable_id_sequence_gen")
+    @Column(name = "ID_Cable")
+    private Long id;
 
-  @Column(name = "Speed")
-  private int speed;
+    @Column(name = "Speed")
+    private int speed;
 
-  @Column(name = "Status")
-  private boolean enable;
+    @Column(name = "Length")
+    private int length;
 
-  public Cable() {
-  }
+    @Column(name = "Cost")
+    private int cost;
 
-  public Cable(int speed, boolean enable) {
-    this.speed = speed;
-    this.enable = enable;
-  }
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_Area", insertable = false, updatable = false)
+    private Area area;
 
-  public Long getId() {
-    return id;
-  }
+    public Cable() {
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public Cable(int speed, int length, int cost) {
+        this.speed = speed;
+        this.length = length;
+        this.cost = cost;
+    }
 
-  public int getSpeed() {
-    return speed;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public void setSpeed(int speed) {
-    this.speed = speed;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public boolean isEnable() {
-    return enable;
-  }
+    public int getSpeed() {
+        return speed;
+    }
 
-  public void setEnable(boolean enable) {
-    this.enable = enable;
-  }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
-  @Override
-  public String toString() {
-    return "Cable{" +
-        "id=" + id +
-        ", speed=" + speed +
-        ", enable=" + enable +
-        '}';
-  }
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return "Cable{" +
+                "id=" + id +
+                '}';
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
 }

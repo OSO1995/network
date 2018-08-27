@@ -23,4 +23,8 @@ public class AuthController {
         return "welcome";
     }
 
+    @RequestMapping(value = {"/ex"}, method = RequestMethod.GET)
+    public void ex(Model model) throws Exception {
+        throw new Exception();
+    }
 }

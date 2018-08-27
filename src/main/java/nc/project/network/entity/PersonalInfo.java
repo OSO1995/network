@@ -12,16 +12,20 @@ public class PersonalInfo {
     @Column(name = "Second_Name")
     private String secondName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_Tariff")
     private Tariff tariff;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_Cable")
     private Cable cable;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Request> requests;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_Area", insertable = false, updatable = false)
+    private Area area;
 
     public String getFirstName() {
         return firstName;
@@ -61,5 +65,13 @@ public class PersonalInfo {
 
     public void setRequests(Set<Request> requests) {
         this.requests = requests;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
     }
 }

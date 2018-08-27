@@ -7,56 +7,59 @@ import javax.persistence.*;
 @Table(name = "Ports")
 public class Port {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "ID_Port")
-  private Long id;
+    @Id
+    @SequenceGenerator(name = "port_id_sequence_gen",
+            sequenceName = "port_id_sequence", initialValue = 10)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "port_id_sequence_gen")
+    @Column(name = "ID_Port")
+    private Long id;
 
-  @ManyToOne
-  @JoinColumn(name = "ID_Cable")
-  private Cable cable;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_Cable")
+    private Cable cable;
 
-  @ManyToOne
-  @JoinColumn(name = "ID_Switch")
-  private Switch aSwitch;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_Switch", insertable = false, updatable = false)
+    private Switch switcch;
 
-  public Port() {
-  }
 
-  public Port(Cable cable) {
-    this.cable = cable;
-  }
+    public Port() {
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public Port(Cable cable) {
+        this.cable = cable;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public Cable getCable() {
-    return cable;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setCable(Cable cable) {
-    this.cable = cable;
-  }
+    public Cable getCable() {
+        return cable;
+    }
 
-  public Switch getaSwitch() {
-    return aSwitch;
-  }
+    public void setCable(Cable cable) {
+        this.cable = cable;
+    }
 
-  public void setaSwitch(Switch aSwitch) {
-    this.aSwitch = aSwitch;
-  }
+    public Switch getSwitcch() {
+        return switcch;
+    }
 
-  @Override
-  public String toString() {
-    return "Port{" +
-        "id=" + id +
-        ", cable=" + cable +
+    public void setSwitcch(Switch switcch) {
+        this.switcch = switcch;
+    }
+
+    @Override
+    public String toString() {
+        return "Port{" +
+                "id=" + id +
+                ", cable=" + cable +
 //        ", aSwitch=" + aSwitch +
-        '}';
-  }
+                '}';
+    }
 }

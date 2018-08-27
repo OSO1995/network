@@ -1,7 +1,6 @@
 package nc.project.network.entity;
 
 
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,7 +9,9 @@ import java.util.Set;
 public class UserBase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "user_id_sequence_gen",
+            sequenceName = "user_id_sequence", initialValue = 10)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_sequence_gen")
     @Column(name = "ID_User")
     private Long id;
 
@@ -26,7 +27,7 @@ public class UserBase {
     @Embedded
     private PersonalInfo personalInfo;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "ID_User"),
@@ -87,8 +88,7 @@ public class UserBase {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
-                roles.toString() +
+                "id=" + id +
                 '}';
     }
 }

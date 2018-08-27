@@ -20,17 +20,17 @@ public class TariffValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Tariff tariff = (Tariff) o;
 
-        Pattern namePattern = Pattern.compile("^[а-яА-ЯёЁa-zA-Z0-9]+$");
-        Matcher name = namePattern.matcher(tariff.getDescription());
+        Pattern namePattern = Pattern.compile(Constants.TEXT2_PATTERN);
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "Required", "Поле не должно быть пустым!");
+        Matcher name = namePattern.matcher(tariff.getDescription());
         if (!name.matches()) {
             errors.rejectValue("description", "user.size.username");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"speed","Required");
-        if (tariff.getSpeed()<=100 || tariff.getSpeed()>=1000){
-            errors.rejectValue("description", "user.size.username");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "speed", "Required");
+        if (tariff.getSpeed() <= 100 || tariff.getSpeed() >= 1000) {
+            errors.rejectValue("speed", "user.tariff.invalid.speed");
         }
 
     }
